@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { FadeInSection } from '../components/FadeInSection';
+import { RoundedIcon } from '../components/RoundedIcon';
 
 const Experience = () => {
   const [showHeader, showExperience, showSkills, showEducation] = useFadeIn([300, 600, 900, 1200]);
@@ -110,13 +111,17 @@ const Experience = () => {
       degree: "Bachelor of Arts in Business Administration",
       school: "Rutgers University",
       period: "Expected May 2026",
-      status: "In Progress"
+      status: "In Progress",
+      logo: "/rutgers-logo.png",
+      logoBg: "white" 
     },
     {
       degree: "Associate of Applied Science in Computer Science",
       school: "DeVry University",
       period: "October 2020",
-      status: "Completed"
+      status: "Completed",
+      logo: "/devry-logo.png",
+      logoBg: "yellow"
     }
   ];
 
@@ -282,7 +287,7 @@ const Experience = () => {
           
           <FadeInSection isVisible={showEducation}>
             <VStack gap={8} align="stretch" w="full">
-              <Heading size="xl" color="white" fontWeight="600" letterSpacing="-0.01em">
+              <Heading size="xl" color="white" fontWeight="600">
                 Education
               </Heading>
               <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} w="full">
@@ -303,12 +308,29 @@ const Experience = () => {
                     }}
                   >
                     <VStack align="stretch" gap={4}>
-                      <Heading size="md" color="white" fontWeight="600" letterSpacing="-0.01em">
-                        {edu.degree}
-                      </Heading>
-                      <Text fontWeight="600" color="blue.400" fontSize="lg">
-                        {edu.school}
-                      </Text>
+                      <VStack gap={1} align="center"> {/* Reduced from gap={2} to gap={1} */}
+                        {edu.logo && (
+                          <RoundedIcon
+                            src={edu.logo}
+                            alt={`${edu.school} logo`}
+                            size="50px"
+                            backgroundColor={edu.logoBg}
+                            mb={2}
+                          />
+                        )}
+                        <Heading 
+                          size="md" 
+                          color="white" 
+                          fontWeight="600" 
+                          letterSpacing="-0.01em" 
+                          textAlign="center"
+                        >
+                          {edu.degree}
+                        </Heading>
+                        <Text fontWeight="600" color="blue.400" fontSize="lg" textAlign="center">
+                          {edu.school}
+                        </Text>
+                      </VStack>
                       <HStack justify="space-between">
                         <Text color="gray.400" fontSize="sm">{edu.period}</Text>
                         <Badge 

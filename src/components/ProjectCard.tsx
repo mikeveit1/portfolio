@@ -6,10 +6,10 @@ import {
   Badge,
   Stack,
   HStack,
-  Image,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
+import { RoundedIcon } from './RoundedIcon';
 
 type ProjectCardProps = {
   title: string;
@@ -66,14 +66,10 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
         <VStack gap={4} align="center">
           <VStack gap={3} align="center">
             {logo && (
-              <Image
+              <RoundedIcon
                 src={logo}
                 alt={`${title} logo`}
-                w="60px"
-                h="60px"
-                objectFit="cover"
-                borderRadius="xl"
-                boxShadow="0 4px 12px rgba(0, 0, 0, 0.3)"
+                size="60px"
               />
             )}
             <Heading size="lg" color="white" fontWeight="600" letterSpacing="-0.01em">
