@@ -225,7 +225,7 @@ const Contact = () => {
                         transition="all 0.2s"
                         fontWeight="600"
                         h={12}
-                        borderRadius="xl"
+                        borderRadius="full"
                         width="full"
                         loading={isSubmitting}
                         loadingText="Sending..."

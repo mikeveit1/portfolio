@@ -22,7 +22,7 @@ import {
     const { open, onOpen, onClose } = useDisclosure();
     const location = useLocation();
     const isMobile = useBreakpointValue({ base: true, md: false });
-  
+
     const NavButton = ({ to, label }: { to: string; label: string }) => (
       <Button
         asChild
@@ -39,11 +39,13 @@ import {
         h={10}
         borderRadius="lg"
         transition="all 0.2s"
+        w={{ base: "full", md: "auto" }} // Full width on mobile, auto on desktop
+        textAlign={{ base: "left", md: "center" }} // Left align on mobile, center on desktop
       >
-        <RouterLink to={to}>{label}</RouterLink>
+        <RouterLink to={to} onClick={onClose}>{label}</RouterLink>
       </Button>
     );
-  
+
     return (
       <Box 
         bg="rgba(0, 0, 0, 0.8)" 
@@ -77,17 +79,18 @@ import {
             {open ? <HiX size={20} /> : <HiMenu size={20} />}
           </IconButton>
         </Flex>
-  
+
         {open && isMobile && (
           <Stack 
             mt={4} 
-            gap={2} 
+            gap={1}
             display={{ md: 'none' }}
             bg="gray.900"
             p={4}
             borderRadius="xl"
             border="1px solid"
             borderColor="gray.800"
+            align="stretch"
           >
             {links.map(({ label, to }) => (
               <NavButton key={to} label={label} to={to} />

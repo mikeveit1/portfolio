@@ -6,9 +6,9 @@ import {
   Badge,
   Stack,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { RoundedIcon } from './RoundedIcon';
+import { ActionButton } from './ActionButton';
 
 type ProjectCardProps = {
   title: string;
@@ -104,165 +104,56 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
           {webLink ? (
             <VStack gap={3} w="full">
               <Stack direction={{ base: "column", sm: "row" }} gap={3} w="full">
-                <Box asChild flex={1}>
-                  <a href={webLink} target="_blank" rel="noopener noreferrer">
-                    <Box
-                      as="button"
-                      bg="white"
-                      color="black"
-                      px={6}
-                      py={3}
-                      borderRadius="full"
-                      fontWeight="600"
-                      fontSize="sm"
-                      _hover={{ bg: 'gray.100', transform: 'translateY(-1px)' }}
-                      _active={{ transform: 'translateY(0px)' }}
-                      transition="all 0.2s"
-                      w="full"
-                    >
-                      View Web App →
-                    </Box>
-                  </a>
-                </Box>
+                <ActionButton
+                  variant="primary"
+                  href={webLink}
+                  external
+                  flex={1}
+                >
+                  View Web App →
+                </ActionButton>
                 
-                <Box asChild flex={1}>
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    <Box
-                      as="button"
-                      bg="transparent"
-                      color="white"
-                      border="1px solid"
-                      borderColor="gray.600"
-                      px={6}
-                      py={3}
-                      borderRadius="full"
-                      fontWeight="600"
-                      fontSize="sm"
-                      _hover={{ borderColor: 'gray.400', transform: 'translateY(-1px)' }}
-                      _active={{ transform: 'translateY(0px)' }}
-                      transition="all 0.2s"
-                      w="full"
-                    >
-                      View Mobile App →
-                    </Box>
-                  </a>
-                </Box>
+                <ActionButton
+                  variant="secondary"
+                  href={link}
+                  external
+                  flex={1}
+                >
+                  View Mobile App →
+                </ActionButton>
               </Stack>
             </VStack>
           ) : githubLink ? (
             <Stack direction={{ base: "column", sm: "row" }} gap={3} w="full">
-              {external ? (
-                <Box asChild flex={1}>
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    <Box
-                      as="button"
-                      bg="white"
-                      color="black"
-                      px={6}
-                      py={3}
-                      borderRadius="full"
-                      fontWeight="600"
-                      fontSize="sm"
-                      _hover={{ bg: 'gray.100', transform: 'translateY(-1px)' }}
-                      _active={{ transform: 'translateY(0px)' }}
-                      transition="all 0.2s"
-                      w="full"
-                    >
-                      View Mobile App →
-                    </Box>
-                  </a>
-                </Box>
-              ) : (
-                <RouterLink to={link} style={{ flex: 1 }}>
-                  <Box
-                    as="button"
-                    bg="white"
-                    color="black"
-                    px={6}
-                    py={3}
-                    borderRadius="full"
-                    fontWeight="600"
-                    fontSize="sm"
-                    _hover={{ bg: 'gray.100', transform: 'translateY(-1px)' }}
-                    _active={{ transform: 'translateY(0px)' }}
-                    transition="all 0.2s"
-                    w="full"
-                  >
-                    View Mobile App →
-                  </Box>
-                </RouterLink>
-              )}
+              <ActionButton
+                variant="primary"
+                href={external ? link : undefined}
+                to={!external ? link : undefined}
+                external={external}
+                flex={1}
+              >
+                View Mobile App →
+              </ActionButton>
               
-              <Box asChild>
-                <a href={githubLink} target="_blank" rel="noopener noreferrer">
-                  <Box
-                    as="button"
-                    bg="transparent"
-                    color="white"
-                    border="1px solid"
-                    borderColor="gray.600"
-                    px={6}
-                    py={3}
-                    borderRadius="full"
-                    fontWeight="600"
-                    fontSize="sm"
-                    _hover={{ borderColor: 'gray.400', transform: 'translateY(-1px)' }}
-                    _active={{ transform: 'translateY(0px)' }}
-                    transition="all 0.2s"
-                    minW="100px"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    gap={2}
-                  >
-                    <FaGithub size={16} />
-                    View GitHub →
-                  </Box>
-                </a>
-              </Box>
+              <ActionButton
+                variant="secondary"
+                href={githubLink}
+                external
+                minW="100px"
+              >
+                <FaGithub size={16} />
+                View GitHub →
+              </ActionButton>
             </Stack>
           ) : (
-            external ? (
-              <Box asChild>
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                  <Box
-                    as="button"
-                    bg="white"
-                    color="black"
-                    px={6}
-                    py={3}
-                    borderRadius="full"
-                    fontWeight="600"
-                    fontSize="sm"
-                    _hover={{ bg: 'gray.100', transform: 'translateY(-1px)' }}
-                    _active={{ transform: 'translateY(0px)' }}
-                    transition="all 0.2s"
-                    w="full"
-                  >
-                    View Mobile App →
-                  </Box>
-                </a>
-              </Box>
-            ) : (
-              <RouterLink to={link}>
-                <Box
-                  as="button"
-                  bg="white"
-                  color="black"
-                  px={6}
-                  py={3}
-                  borderRadius="full"
-                  fontWeight="600"
-                  fontSize="sm"
-                  _hover={{ bg: 'gray.100', transform: 'translateY(-1px)' }}
-                  _active={{ transform: 'translateY(0px)' }}
-                  transition="all 0.2s"
-                  w="full"
-                >
-                  View Mobile App →
-                </Box>
-              </RouterLink>
-            )
+            <ActionButton
+              variant="primary"
+              href={external ? link : undefined}
+              to={!external ? link : undefined}
+              external={external}
+            >
+              View Mobile App →
+            </ActionButton>
           )}
         </Box>
       </VStack>

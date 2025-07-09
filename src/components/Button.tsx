@@ -41,6 +41,7 @@ export const Button = ({
   const baseStyles = {
     fontWeight: '600',
     px: { base: 6, md: 8 },
+    py: 3,
     h: size === 'lg' ? 12 : 10,
     borderRadius: 'full',
     transition: 'all 0.2s',
