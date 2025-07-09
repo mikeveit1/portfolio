@@ -216,7 +216,7 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
                     gap={2}
                   >
                     <FaGithub size={16} />
-                    GitHub →
+                    View GitHub →
                   </Box>
                 </a>
               </Box>

@@ -1,12 +1,10 @@
 import { 
   Box, 
   Container, 
-  Heading, 
   Text, 
   VStack,
   HStack,
   SimpleGrid,
-  Button,
   Input,
   Textarea
 } from '@chakra-ui/react';
@@ -15,6 +13,8 @@ import { FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { FadeInSection } from '../components/FadeInSection';
+import { Button } from '../components/Button';
+import { HeroHeading, BodyLarge, CardHeading, FormLabel, MediumHeading, BodyMedium, BodySmall } from '../components/Text';
 
 const Contact = () => {
   const [showHeader, showContent] = useFadeIn([300, 600]);
@@ -100,23 +100,8 @@ const Contact = () => {
         <VStack gap={12} align="stretch" w="full">
           <FadeInSection isVisible={showHeader}>
             <VStack gap={4} textAlign="center" w="full">
-              <Heading 
-                size={{ base: "xl", md: "2xl" }} 
-                color="white"
-                fontWeight="600"
-                letterSpacing="-0.02em"
-              >
-                Let's Work Together
-              </Heading>
-              <Text 
-                fontSize={{ base: "lg", md: "xl" }} 
-                color="gray.400" 
-                maxW="4xl"
-                lineHeight="1.6"
-              >
-                Available for new opportunities, consulting projects, and collaborations. 
-                Experienced in mobile development, web applications, AI integration, and leading technical teams.
-              </Text>
+              <HeroHeading>Let's Work Together</HeroHeading>
+              <BodyLarge>Available for new opportunities, consulting projects, and collaborations. Experienced in mobile development, web applications, AI integration, and leading technical teams.</BodyLarge>
             </VStack>
           </FadeInSection>
 
@@ -149,16 +134,12 @@ const Contact = () => {
                 />
                 
                 <VStack gap={8} align="stretch" position="relative" zIndex={1}>
-                  <Heading size="lg" color="white" fontWeight="600" letterSpacing="-0.01em">
-                    Send me a message
-                  </Heading>
+                  <CardHeading>Send me a message</CardHeading>
                   
                   <form onSubmit={handleSubmit}>
                     <VStack gap={6} align="stretch">
                       <Box>
-                        <Text mb={3} fontWeight="600" color="white" fontSize="sm">
-                          Name
-                        </Text>
+                        <FormLabel>Name</FormLabel>
                         <Input
                           name="name"
                           value={formData.name}
@@ -179,9 +160,7 @@ const Contact = () => {
                       </Box>
 
                       <Box>
-                        <Text mb={3} fontWeight="600" color="white" fontSize="sm">
-                          Email
-                        </Text>
+                        <FormLabel>Email</FormLabel>
                         <Input
                           name="email"
                           type="email"
@@ -203,9 +182,7 @@ const Contact = () => {
                       </Box>
 
                       <Box>
-                        <Text mb={3} fontWeight="600" color="white" fontSize="sm">
-                          Message
-                        </Text>
+                        <FormLabel>Message</FormLabel>
                         <Textarea
                           name="message"
                           value={formData.message}
@@ -262,9 +239,7 @@ const Contact = () => {
 
               {/* Contact Information */}
               <VStack gap={6} align="stretch" w="full">
-                <Heading size="lg" color="white" fontWeight="600" letterSpacing="-0.01em">
-                  Get in touch
-                </Heading>
+                <CardHeading>Get in touch</CardHeading>
                 
                 <VStack gap={4} align="stretch">
                   {contactInfo.map((contact, index) => (
@@ -340,26 +315,20 @@ const Contact = () => {
                   }}
                 >
                   <VStack gap={6} align="start">
-                    <Heading size="md" color="white" fontWeight="600" letterSpacing="-0.01em">
-                      Currently Available
-                    </Heading>
-                    <Text color="gray.300" lineHeight="1.6">
-                      Open to full-time opportunities, contract work, and consulting projects. 
-                      Particularly interested in mobile development, AI integration, fintech solutions, 
-                      and healthcare technology applications.
-                    </Text>
+                    <MediumHeading>Currently Available</MediumHeading>
+                    <BodyMedium>Open to full-time opportunities, contract work, and consulting projects. Particularly interested in mobile/web development and AI solutions.</BodyMedium>
                     <VStack align="start" gap={3}>
                       <HStack>
                         <Box w="6px" h="6px" bg="green.400" borderRadius="full" />
-                        <Text fontSize="sm" color="gray.300">Available for new projects</Text>
+                        <BodySmall>Available for new projects</BodySmall>
                       </HStack>
                       <HStack>
                         <Box w="6px" h="6px" bg="blue.400" borderRadius="full" />
-                        <Text fontSize="sm" color="gray.300">Open to remote work</Text>
+                        <BodySmall>Open to remote work</BodySmall>
                       </HStack>
                       <HStack>
                         <Box w="6px" h="6px" bg="purple.400" borderRadius="full" />
-                        <Text fontSize="sm" color="gray.300">New Jersey based</Text>
+                        <BodySmall>New Jersey based</BodySmall>
                       </HStack>
                     </VStack>
                   </VStack>
