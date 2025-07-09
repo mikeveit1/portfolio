@@ -5,7 +5,6 @@ import {
   VStack,
   Badge,
   Stack,
-  HStack,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
