@@ -7,7 +7,7 @@ interface RoundedIconProps {
   borderRadius?: string;
   backgroundColor?: string;
   padding?: string;
-  mb?: string | number; // Add margin-bottom prop
+  mb?: string | number;
 }
 
 export const RoundedIcon = ({ 
@@ -54,7 +54,7 @@ export const RoundedIcon = ({
       objectFit="cover"
       borderRadius={borderRadius}
       boxShadow="0 4px 12px rgba(0, 0, 0, 0.3)"
-      mb={mb} // Apply margin-bottom
+      mb={mb}
     />
   );
 };

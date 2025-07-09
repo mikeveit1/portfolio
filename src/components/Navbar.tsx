@@ -39,8 +39,8 @@ import {
         h={10}
         borderRadius="lg"
         transition="all 0.2s"
-        w={{ base: "full", md: "auto" }} // Full width on mobile, auto on desktop
-        textAlign={{ base: "left", md: "center" }} // Left align on mobile, center on desktop
+        w={{ base: "full", md: "auto" }}
+        textAlign={{ base: "left", md: "center" }}
       >
         <RouterLink to={to} onClick={onClose}>{label}</RouterLink>
       </Button>

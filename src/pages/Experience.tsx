@@ -277,7 +277,7 @@ const Experience = () => {
                     }}
                   >
                     <VStack align="stretch" gap={4}>
-                      <VStack gap={1} align="center"> {/* Reduced from gap={2} to gap={1} */}
+                      <VStack gap={1} align="center">
                         {edu.logo && (
                           <RoundedIcon
                             src={edu.logo}

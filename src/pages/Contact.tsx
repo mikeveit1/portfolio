@@ -107,7 +107,6 @@ const Contact = () => {
 
           <FadeInSection isVisible={showContent}>
             <SimpleGrid columns={{ base: 1, lg: 2 }} gap={8} w="full">
-              {/* Contact Form */}
               <Box
                 borderWidth="1px"
                 borderColor="gray.800"
@@ -237,7 +236,6 @@ const Contact = () => {
                 </VStack>
               </Box>
 
-              {/* Contact Information */}
               <VStack gap={6} align="stretch" w="full">
                 <CardHeading>Get in touch</CardHeading>
                 

@@ -4,7 +4,7 @@ import {
   Stack,
   Image,
   HStack,
-  Text, // Add this back for the button text
+  Text,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { FaGithub } from 'react-icons/fa';
