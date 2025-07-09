@@ -99,8 +99,6 @@ VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
 VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 ```
 
-This README gives potential employers/collaborators everything they need to understand your project and run it locally!
-
 ## 🎨 Design System
 
 - **Color Palette**: Apple-inspired blacks, grays, and accent blues
