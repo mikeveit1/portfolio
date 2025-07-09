@@ -1,7 +1,6 @@
 import { 
   Box, 
-  Container, 
-  Heading, 
+  Container,  
   Text, 
   VStack,
   HStack,
@@ -12,6 +11,7 @@ import {
 import { useFadeIn } from '../hooks/useFadeIn';
 import { FadeInSection } from '../components/FadeInSection';
 import { RoundedIcon } from '../components/RoundedIcon';
+import { HeroHeading, BodyLarge, SectionHeading, CardHeading, CompanyName, BodyMedium, BodySmall, SmallHeading, MediumHeading, MetaText } from '../components/Text';
 
 const Experience = () => {
   const [showHeader, showExperience, showSkills, showEducation] = useFadeIn([300, 600, 900, 1200]);
@@ -32,7 +32,7 @@ const Experience = () => {
     {
       title: "Founder & CEO",
       company: "Vemara Solutions",
-      period: "Mar 2024 - Jan 2025",
+      period: "Aug 2024 - Jan 2025",
       description: "Ran a boutique dev consultancy delivering custom web and mobile apps for startups and small businesses, managing full project lifecycle from conception to deployment.",
       achievements: [
         "Architected systems using React Native, Firebase, Swift, and Kotlin",
@@ -131,31 +131,14 @@ const Experience = () => {
         <VStack gap={12} align="stretch" w="full">
           <FadeInSection isVisible={showHeader}>
             <VStack gap={4} textAlign="center" w="full">
-              <Heading 
-                size={{ base: "xl", md: "2xl" }} 
-                color="white"
-                fontWeight="600"
-                letterSpacing="-0.02em"
-              >
-                Experience & Skills
-              </Heading>
-              <Text 
-                fontSize={{ base: "lg", md: "xl" }} 
-                color="gray.400" 
-                maxW="4xl"
-                lineHeight="1.6"
-              >
-                Experienced in leading teams, managing clients, and bringing complex products to life 
-                across fintech, healthcare, and consumer applications.
-              </Text>
+              <HeroHeading>Experience & Skills</HeroHeading>
+              <BodyLarge>Experienced in leading teams, managing clients, and bringing complex products to life across fintech, healthcare, and consumer applications.</BodyLarge>
             </VStack>
           </FadeInSection>
 
           <FadeInSection isVisible={showExperience}>
             <VStack gap={8} align="stretch" w="full">
-              <Heading size="xl" color="white" fontWeight="600" letterSpacing="-0.01em">
-                Professional Experience
-              </Heading>
+              <SectionHeading>Professional Experience</SectionHeading>
               <VStack gap={6} w="full">
                 {experiences.map((exp, index) => (
                   <Box
@@ -187,13 +170,9 @@ const Experience = () => {
                     
                     <VStack align="stretch" gap={6} position="relative" zIndex={1}>
                       <VStack align="stretch" gap={3}>
-                        <Heading size="lg" color="white" fontWeight="600" letterSpacing="-0.01em">
-                          {exp.title}
-                        </Heading>
+                        <CardHeading>{exp.title}</CardHeading>
                         <HStack justify="space-between" wrap="wrap">
-                          <Text fontWeight="600" color="blue.400" fontSize="lg">
-                            {exp.company}
-                          </Text>
+                          <CompanyName>{exp.company}</CompanyName>
                           <Badge 
                             bg="gray.700" 
                             color="gray.300" 
@@ -207,9 +186,7 @@ const Experience = () => {
                         </HStack>
                       </VStack>
                       
-                      <Text color="gray.300" lineHeight="1.6" fontSize="md">
-                        {exp.description}
-                      </Text>
+                      <BodyMedium>{exp.description}</BodyMedium>
                       
                       <VStack align="stretch" gap={4}>
                         <Text fontWeight="600" color="white" fontSize="md">
@@ -223,9 +200,7 @@ const Experience = () => {
                               mt="8px" 
                               flexShrink={0} 
                             />
-                            <Text fontSize="sm" flex={1} color="gray.300" lineHeight="1.6">
-                              {achievement}
-                            </Text>
+                            <BodySmall flex={1} color="gray.300" lineHeight="1.6">{achievement}</BodySmall>
                           </HStack>
                         ))}
                       </VStack>
@@ -238,9 +213,7 @@ const Experience = () => {
 
           <FadeInSection isVisible={showSkills}>
             <VStack gap={8} align="stretch" w="full">
-              <Heading size="xl" color="white" fontWeight="600" letterSpacing="-0.01em">
-                Technical Skills
-              </Heading>
+              <SectionHeading>Technical Skills</SectionHeading>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 6 }} gap={6} w="full">
                 {skills.map((skillGroup, index) => (
                   <Box
@@ -259,9 +232,7 @@ const Experience = () => {
                     }}
                   >
                     <VStack align="stretch" gap={4}>
-                      <Heading size="sm" color="blue.400" fontWeight="600">
-                        {skillGroup.category}
-                      </Heading>
+                      <SmallHeading>{skillGroup.category}</SmallHeading>
                       <VStack align="stretch" gap={2}>
                         {skillGroup.items.map((skill, skillIndex) => (
                           <Badge 
@@ -287,9 +258,7 @@ const Experience = () => {
           
           <FadeInSection isVisible={showEducation}>
             <VStack gap={8} align="stretch" w="full">
-              <Heading size="xl" color="white" fontWeight="600">
-                Education
-              </Heading>
+              <SectionHeading>Education</SectionHeading>
               <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} w="full">
                 {education.map((edu, index) => (
                   <Box
@@ -318,21 +287,11 @@ const Experience = () => {
                             mb={2}
                           />
                         )}
-                        <Heading 
-                          size="md" 
-                          color="white" 
-                          fontWeight="600" 
-                          letterSpacing="-0.01em" 
-                          textAlign="center"
-                        >
-                          {edu.degree}
-                        </Heading>
-                        <Text fontWeight="600" color="blue.400" fontSize="lg" textAlign="center">
-                          {edu.school}
-                        </Text>
+                        <MediumHeading textAlign="center">{edu.degree}</MediumHeading>
+                        <CompanyName textAlign="center">{edu.school}</CompanyName>
                       </VStack>
                       <HStack justify="space-between">
-                        <Text color="gray.400" fontSize="sm">{edu.period}</Text>
+                        <MetaText>{edu.period}</MetaText>
                         <Badge 
                           bg={edu.status === "Completed" ? "green.600" : "blue.600"}
                           color="white"

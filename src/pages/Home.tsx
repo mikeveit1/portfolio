@@ -1,15 +1,17 @@
 import {
   Box,
-  Heading,
-  Text,
-  Button,
   VStack,
   Stack,
   Image,
+  HStack,
+  Text, // Add this back for the button text
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import { FaGithub } from 'react-icons/fa';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { FadeInSection } from '../components/FadeInSection';
+import { Button } from '../components/Button';
+import { HeroHeading, Subtitle, BodyLarge } from '../components/Text';
 
 const Home = () => {
   const [showPhoto, showName, showSubtitle, showDescription, showButtons] = useFadeIn([500, 700, 1200, 1800, 2000]);
@@ -51,34 +53,19 @@ const Home = () => {
         </FadeInSection>
         
         <FadeInSection isVisible={showName}>
-          <Heading 
-            size={{ base: "xl", md: "2xl" }}
-            color="white"
-            fontWeight="600"
-            letterSpacing="-0.02em"
-          >
+          <HeroHeading>
             Mike Veit
-          </Heading>
+          </HeroHeading>
         </FadeInSection>
         
         <FadeInSection isVisible={showSubtitle}>
-          <Text 
-            fontSize={{ base: "lg", md: "xl" }} 
-            color="gray.300" 
-            fontWeight="500"
-          >
+          <Subtitle>
             Mobile & Web Developer • AI Engineer
-          </Text>
+          </Subtitle>
         </FadeInSection>
         
         <FadeInSection isVisible={showDescription}>
-          <Text 
-            fontSize={{ base: "lg", md: "xl" }} 
-            color="gray.400" 
-            maxW="3xl"
-            lineHeight="1.6"
-            fontWeight="400"
-          >
+          <BodyLarge maxW="3xl" fontWeight="400">
             Versatile and results-driven Software Engineer with hands-on
             experience building and deploying mobile and web applications from
             the ground up. Adept in front-end development, backend architecture,
@@ -86,61 +73,56 @@ const Home = () => {
             clean, scalable code that delivers real-world value. Experienced in
             leading teams, managing clients, and bringing complex products to
             life.
-          </Text>
+          </BodyLarge>
         </FadeInSection>
         
         <FadeInSection isVisible={showButtons}>
-          <Stack 
-            direction={{ base: "column", sm: "row" }}
-            gap={4}
-            w="full"
-            justify="center"
-            maxW="md"
-          >
-            <Button
-              asChild
-              size="lg"
-              bg="white"
-              color="black"
-              _hover={{ bg: "gray.100", transform: "translateY(-1px)" }}
-              _active={{ transform: "translateY(0px)" }}
-              transition="all 0.2s"
-              fontWeight="600"
-              px={8}
-              h={12}
-              borderRadius="full"
-              flex={1}
+          <VStack gap={4} w="full" maxW="md">
+            <Stack 
+              direction={{ base: "column", sm: "row" }}
+              gap={4}
+              w="full"
+              justify="center"
             >
-              <RouterLink to="/projects">View Projects</RouterLink>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              borderColor="gray.600"
-              color="white"
-              _hover={{
-                borderColor: "gray.400",
-                bg: "gray.900",
-                transform: "translateY(-1px)",
-              }}
-              _active={{ transform: "translateY(0px)" }}
-              transition="all 0.2s"
-              fontWeight="600"
-              px={8}
-              h={12}
-              borderRadius="full"
-              flex={1}
-            >
-              <a
-                href="/Mike_Veit_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                asChild
+                variant="primary"
+                flex={1}
               >
-                Download Resume
+                <RouterLink to="/projects">View Projects</RouterLink>
+              </Button>
+              <Button
+                asChild
+                variant="secondary"
+                flex={1}
+              >
+                <a href="/Mike_Veit_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  Download Resume
+                </a>
+              </Button>
+            </Stack>
+            
+            <Button
+              asChild
+              variant="secondary"
+              w="full"
+            >
+              <a href="https://github.com/mikeveit1/portfolio" target="_blank" rel="noopener noreferrer">
+                <HStack gap={2}>
+                  <FaGithub size={18} />
+                  <Text fontSize={{ base: "sm", md: "md" }}>
+                    <Box as="span" display={{ base: "none", sm: "inline" }}>
+                      View this site on GitHub
+                    </Box>
+                    <Box as="span" display={{ base: "inline", sm: "none" }}>
+                      View on GitHub
+                    </Box>
+                  </Text>
+                  <Text>→</Text>
+                </HStack>
               </a>
             </Button>
-          </Stack>
+          </VStack>
         </FadeInSection>
       </VStack>
     </Box>

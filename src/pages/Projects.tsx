@@ -1,14 +1,13 @@
 import { 
   Box, 
   Container, 
-  Heading, 
-  Text, 
   SimpleGrid, 
   VStack
 } from '@chakra-ui/react';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { FadeInSection } from '../components/FadeInSection';
 import ProjectCard from '../components/ProjectCard';
+import { HeroHeading, BodyLarge } from '../components/Text';
 
 const Projects = () => {
   const [showHeader, showProjects] = useFadeIn([300, 800]);
@@ -48,23 +47,10 @@ const Projects = () => {
         <VStack gap={12} align="stretch" w="full">
           <FadeInSection isVisible={showHeader}>
             <VStack gap={4} textAlign="center" w="full">
-              <Heading 
-                size={{ base: "xl", md: "2xl" }} 
-                color="white"
-                fontWeight="600"
-                letterSpacing="-0.02em"
-              >
-                Featured Projects
-              </Heading>
-              <Text 
-                fontSize={{ base: "lg", md: "xl" }} 
-                color="gray.400" 
-                maxW="4xl"
-                lineHeight="1.6"
-              >
-                A selection of projects showcasing full-stack development, mobile applications, 
-                AI integration, and enterprise solutions across healthcare, fintech, and consumer apps.
-              </Text>
+              <HeroHeading>Featured Projects</HeroHeading>
+              <BodyLarge>A selection of projects showcasing full-stack development, mobile/web applications, and
+                AI integration.
+              </BodyLarge>
             </VStack>
           </FadeInSection>
 
