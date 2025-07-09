@@ -6,9 +6,13 @@ import {
   SimpleGrid, 
   VStack
 } from '@chakra-ui/react';
+import { useFadeIn } from '../hooks/useFadeIn';
+import { FadeInSection } from '../components/FadeInSection';
 import ProjectCard from '../components/ProjectCard';
 
 const Projects = () => {
+  const [showHeader, showProjects] = useFadeIn([300, 800]);
+
   const projects = [
     {
       title: "ClipAI - AI Video Editor",
@@ -17,8 +21,7 @@ const Projects = () => {
       external: true,
       tech: ["React", "React Native", "FastAPI", "OpenCV", "GPT-4", "FFmpeg", "AWS S3", "Firebase"],
       webLink: "https://app.useclip.ai",
-      logo: "/clipai-logo.png",
-      logoBg: "#1a202c"
+      logo: "/clipai-logo.png"
     },
     {
       title: "MacroTrack - Nutrition Tracker",
@@ -27,8 +30,7 @@ const Projects = () => {
       external: true,
       tech: ["SwiftUI", "Firebase", "FatSecret API", "RevenueCat", "MVVM", "Core Data"],
       githubLink: "https://github.com/mikeveit1/macrotrack",
-      logo: "/macrotrack-logo.png",
-      logoBg: "#1a202c"
+      logo: "/macrotrack-logo.png"
     },
     {
       title: "CaptureNoire - Photo Editor",
@@ -36,40 +38,43 @@ const Projects = () => {
       link: "https://apps.apple.com/us/app/capturenoire-photo-editor/id6739007480",
       external: false,
       tech: ["Swift", "React Native", "TypeScript", "Firebase Auth", "Firebase Database", "Firebase Storage", "iOS", "Cross-platform"],
-      logo: "/capturenoire-logo.png",
-      logoBg: "#1a202c"
+      logo: "/capturenoire-logo.png"
     },
   ];
 
   return (
-    <Box bg="black" minH="100vh" w="100vw" py={8}>
+    <Box bg="black" minH="100vh" w="100vw" py={16}>
       <Container maxW="8xl" w="full" px={8}>
         <VStack gap={12} align="stretch" w="full">
-          <VStack gap={4} textAlign="center" w="full">
-            <Heading 
-              size={{ base: "xl", md: "2xl" }} 
-              color="white"
-              fontWeight="600"
-              letterSpacing="-0.02em"
-            >
-              Featured Projects
-            </Heading>
-            <Text 
-              fontSize={{ base: "lg", md: "xl" }} 
-              color="gray.400" 
-              maxW="4xl"
-              lineHeight="1.6"
-            >
-              A selection of projects showcasing full-stack development, mobile applications, 
-              AI integration, and enterprise solutions across healthcare, fintech, and consumer apps.
-            </Text>
-          </VStack>
+          <FadeInSection isVisible={showHeader}>
+            <VStack gap={4} textAlign="center" w="full">
+              <Heading 
+                size={{ base: "xl", md: "2xl" }} 
+                color="white"
+                fontWeight="600"
+                letterSpacing="-0.02em"
+              >
+                Featured Projects
+              </Heading>
+              <Text 
+                fontSize={{ base: "lg", md: "xl" }} 
+                color="gray.400" 
+                maxW="4xl"
+                lineHeight="1.6"
+              >
+                A selection of projects showcasing full-stack development, mobile applications, 
+                AI integration, and enterprise solutions across healthcare, fintech, and consumer apps.
+              </Text>
+            </VStack>
+          </FadeInSection>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6} w="full" alignItems="stretch">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
-          </SimpleGrid>
+          <FadeInSection isVisible={showProjects}>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6} w="full" alignItems="stretch">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+            </SimpleGrid>
+          </FadeInSection>
         </VStack>
       </Container>
     </Box>
