@@ -90,15 +90,6 @@ src/
 └── main.tsx           # App entry point
 ```
 
-You might also want to create a `.env.example` file:
-
-```env:.env.example
-# EmailJS Configuration
-VITE_EMAILJS_SERVICE_ID=your_service_id_here
-VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
-```
-
 ## 🎨 Design System
 
 - **Color Palette**: Apple-inspired blacks, grays, and accent blues
