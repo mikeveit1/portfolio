@@ -104,7 +104,7 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
         <Box w="full">
           {webLink ? (
             <VStack gap={3} w="full">
-              <HStack gap={3} w="full">
+              <Stack direction={{ base: "column", sm: "row" }} gap={3} w="full">
                 <Box asChild flex={1}>
                   <a href={webLink} target="_blank" rel="noopener noreferrer">
                     <Box
@@ -148,10 +148,10 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
                     </Box>
                   </a>
                 </Box>
-              </HStack>
+              </Stack>
             </VStack>
           ) : githubLink ? (
-            <HStack gap={3} w="full">
+            <Stack direction={{ base: "column", sm: "row" }} gap={3} w="full">
               {external ? (
                 <Box asChild flex={1}>
                   <a href={link} target="_blank" rel="noopener noreferrer">
@@ -221,7 +221,7 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
                   </Box>
                 </a>
               </Box>
-            </HStack>
+            </Stack>
           ) : (
             external ? (
               <Box asChild>

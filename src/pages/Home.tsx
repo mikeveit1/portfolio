@@ -23,7 +23,7 @@ const Home = () => {
       justifyContent="center" 
       bg="black" 
       px={6}
-      pt={24}
+      py={8}
       position="relative"
       overflow="hidden"
     >

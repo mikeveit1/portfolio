@@ -95,8 +95,8 @@ const Contact = () => {
   ];
 
   return (
-    <Box bg="black" minH="100vh" w="100vw" py={16}>
-      <Container maxW="8xl" w="full" px={8}>
+    <Box bg="black" minH="100vh" w="100vw" py={8}>
+      <Container maxW="8xl" w="full" px={{ base: 4, md: 8 }}>
         <VStack gap={12} align="stretch" w="full">
           <FadeInSection isVisible={showHeader}>
             <VStack gap={4} textAlign="center" w="full">
