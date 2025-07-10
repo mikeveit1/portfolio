@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my software engineering projects and experience. Built with React, TypeScript, and Chakra UI with an Apple-inspired dark theme.
 
-🌐 **Live Site**: [Your deployed URL here]
+🌐 **Live Site**: https://mikeveit.me
 
 ## ✨ Features
 
