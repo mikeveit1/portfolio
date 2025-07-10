@@ -23,7 +23,7 @@ A modern, responsive portfolio website showcasing my software engineering projec
 - **Styling**: CSS-in-JS with Chakra UI
 - **Icons**: React Icons (Font Awesome, etc.)
 - **Email Service**: EmailJS
-- **Deployment**: [Vercel/Netlify/etc.]
+- **Deployment**: Vercel
 
 ## 🚀 Quick Start
 
