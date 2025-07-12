@@ -72,8 +72,8 @@ import {
             display={{ md: 'none' }}
             onClick={open ? onClose : onOpen}
             variant="ghost"
-            color="white"
-            _hover={{ bg: 'gray.800' }}
+            color="gray.300"
+            _hover={{ bg: 'gray.800', color: 'white' }}
             borderRadius="lg"
           >
             {open ? <HiX size={20} /> : <HiMenu size={20} />}
