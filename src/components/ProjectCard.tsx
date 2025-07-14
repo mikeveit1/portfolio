@@ -13,7 +13,7 @@ import { ActionButton } from './ActionButton';
 type ProjectCardProps = {
   title: string;
   description: string;
-  link: string;
+  link?: string; 
   external?: boolean;
   tech?: string[];
   githubLink?: string;
@@ -125,36 +125,61 @@ const ProjectCard = ({ title, description, link, external, tech = [], githubLink
             </VStack>
           ) : githubLink ? (
             <Stack direction={{ base: "column", sm: "row" }} gap={3} w="full">
+              {link && (
+                <ActionButton
+                  variant="primary"
+                  href={external ? link : undefined}
+                  to={!external ? link : undefined}
+                  external={external}
+                  flex={1}
+                >
+                  {link.includes('github.com') ? (
+                    <>
+                      <FaGithub size={16} />
+                      View GitHub →
+                    </>
+                  ) : (
+                    'View Mobile App →'
+                  )}
+                </ActionButton>
+              )}
+              
+              <Box 
+                flex={link ? undefined : 1}
+                maxW={link ? undefined : "50%"}
+                mx={link ? undefined : "auto"}
+              >
+                <ActionButton
+                  variant="secondary"
+                  href={githubLink}
+                  external
+                  w="full"
+                >
+                  <FaGithub size={16} />
+                  View GitHub →
+                </ActionButton>
+              </Box>
+            </Stack>
+          ) : link ? (
+            <Box maxW="50%" mx="auto" w="full">
               <ActionButton
                 variant="primary"
                 href={external ? link : undefined}
                 to={!external ? link : undefined}
                 external={external}
-                flex={1}
+                w="full"
               >
-                View Mobile App →
+                {link.includes('github.com') ? (
+                  <>
+                    <FaGithub size={16} />
+                    View GitHub →
+                  </>
+                ) : (
+                  'View Mobile App →'
+                )}
               </ActionButton>
-              
-              <ActionButton
-                variant="secondary"
-                href={githubLink}
-                external
-                minW="100px"
-              >
-                <FaGithub size={16} />
-                View GitHub →
-              </ActionButton>
-            </Stack>
-          ) : (
-            <ActionButton
-              variant="primary"
-              href={external ? link : undefined}
-              to={!external ? link : undefined}
-              external={external}
-            >
-              View Mobile App →
-            </ActionButton>
-          )}
+            </Box>
+          ) : null}
         </Box>
       </VStack>
     </Box>

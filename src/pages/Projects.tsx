@@ -35,9 +35,17 @@ const Projects = () => {
       title: "CaptureNoire - Photo Editor",
       description: "Mobile photography and video editing app optimized for all skin tones, addressing challenges with dark skin representation in photo editing software. Led development as founding engineer, overseeing architectural decisions and team coordination.",
       link: "https://apps.apple.com/us/app/capturenoire-photo-editor/id6739007480",
-      external: false,
+      external: true,
       tech: ["Swift", "React Native", "TypeScript", "Firebase Auth", "Firebase Database", "Firebase Storage", "iOS", "Cross-platform"],
       logo: "/capturenoire-logo.png"
+    },
+    {
+      title: "Hybrid Audiobook Player Demo",
+      description: "Advanced React Native audiobook player demonstrating custom native modules for iOS (Swift) and Android (Kotlin). Features real-time bridge communication, chapter navigation, progress tracking, and professional cross-platform architecture showcasing hybrid mobile development expertise.",
+      githubLink: "https://github.com/mikeveit1/HybridPlayerDemo",
+      external: true,
+      tech: ["React Native", "TypeScript", "Swift", "Kotlin", "AVAudioPlayer", "MediaPlayer", "Native Modules", "Cross-platform"],
+      logo: "/react-native-logo.png"
     },
   ];
 
