@@ -33,7 +33,7 @@ const Projects = () => {
     },
     {
       title: "CaptureNoire - Photo Editor",
-      description: "Mobile photography and video editing app optimized for all skin tones, addressing challenges with dark skin representation in photo editing software. Led development as founding engineer, overseeing architectural decisions and team coordination.",
+      description: "Mobile photography and video editing app built with React Native and Swift, featuring advanced image processing algorithms and cross-platform mobile development.",
       link: "https://apps.apple.com/us/app/capturenoire-photo-editor/id6739007480",
       external: true,
       tech: ["Swift", "React Native", "TypeScript", "Firebase Auth", "Firebase Database", "Firebase Storage", "iOS", "Cross-platform"],
