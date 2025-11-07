@@ -41,10 +41,10 @@ const Projects = () => {
     },
     {
       title: "Hybrid Audiobook Player Demo",
-      description: "Advanced React Native audiobook player demonstrating custom native modules for iOS (Swift) and Android (Kotlin). Features real-time bridge communication, chapter navigation, progress tracking, and professional cross-platform architecture showcasing hybrid mobile development expertise.",
+      description: "Advanced React Native audiobook player demonstrating custom native modules for iOS (Swift) and Android (Kotlin). Features real-time bridge communication, chapter navigation, and professional cross-platform architecture.",
       githubLink: "https://github.com/mikeveit1/HybridPlayerDemo",
       external: true,
-      tech: ["React Native", "TypeScript", "Swift", "Kotlin", "AVAudioPlayer", "MediaPlayer", "Native Modules", "Cross-platform"],
+      tech: ["React Native", "TypeScript", "Swift", "Kotlin", "AVAudioPlayer", "Native Modules", "Cross-platform"],
       logo: "/react-native-logo.png"
     },
   ];
