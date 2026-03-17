@@ -40,6 +40,22 @@ const Projects = () => {
       logo: "/capturenoire-logo.png"
     },
     {
+      title: "Intervu: Job Interview Prep",
+      description: "AI-powered interview coach that helps you prepare for real interviews with personalized mock interviews tailored to your resume and target jobs. Features real-time practice, detailed feedback, and interview history tracking.",
+      link: "https://apps.apple.com/us/app/intervu-job-interview-prep/id6756896878",
+      external: true,
+      tech: ["React Native", "FastAPI", "Python", "GPT-4", "Firebase"],
+      logo: "/intervu-logo.png"
+    },
+    {
+      title: "Pinned: Notes to Friends",
+      description: "Note-sharing app that keeps you connected with friends through messages that appear on their iPhone home screen widgets. Send short, thoughtful notes with instant delivery and customizable profiles.",
+      link: "https://apps.apple.com/us/app/pinned-notes-to-friends/id6757110232",
+      external: true,
+      tech: ["React Native", "FastAPI", "Python", "GPT-4", "Firebase", "SwiftUI"],
+      logo: "/pinned-logo.png"
+    },
+    {
       title: "Hybrid Audiobook Player Demo",
       description: "Advanced React Native audiobook player demonstrating custom native modules for iOS (Swift) and Android (Kotlin). Features real-time bridge communication, chapter navigation, and professional cross-platform architecture.",
       githubLink: "https://github.com/mikeveit1/HybridPlayerDemo",
