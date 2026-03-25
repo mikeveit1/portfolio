@@ -96,7 +96,12 @@ const Home = () => {
                 variant="secondary"
                 flex={1}
               >
-                <a href="/Mike_Veit_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="/MikeVeit_Resume.pdf"
+                  download="MikeVeit_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Download Resume
                 </a>
               </Button>
