@@ -18,9 +18,30 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: "Software Engineer (Web & Mobile)",
+      company: "Audicus",
+      period: "Sept 2025 - Present",
+      description:
+        "Leading architecture and development of core frontend systems across React web and React Native for production hearing test products, with ownership of deployment pipelines, analytics, CMS workflows, and a cross-platform Hearing Test SDK.",
+      achievements: [
+        "Led architecture and development of core frontend systems across React web and React Native mobile applications supporting production hearing test products",
+        "Designed and implemented a modular analytics and telemetry service, enabling dynamic provider integration (GTM, Clarity, Hotjar, Sentry) and improving observability and system reliability",
+        "Owned and delivered a UAT → Production deployment pipeline across CMS and mobile apps, eliminating manual processes and significantly improving release velocity and safety",
+        "Automated CMS workflows by building tooling to synchronize Directus environments (local, UAT, production), reducing redundant engineering effort and preventing data inconsistencies",
+        "Spearheaded development of a cross-platform Hearing Test SDK, centralizing business logic, authentication, and data mapping into a scalable shared package",
+        "Implemented secure data handling practices, including encryption and controlled data flow for patient and session data",
+        "Expanded automated test coverage by building end-to-end testing frameworks for critical user flows, improving confidence in production releases",
+        "Drove platform scalability initiatives by migrating hardcoded product configurations into a CMS driven architecture, enabling non engineering stakeholders to manage content dynamically",
+        "Delivered complex, user facing features including hearing tests, headphone validation, and audio system improvements across web and mobile",
+        "Mentored junior engineers through recurring 1:1s, code reviews, and pair programming, elevating team code quality and engineering standards",
+        "Partnered with product, design, and CX to shape feature requirements and support major product launches",
+        "Introduced engineering best practices including branch protection rules, release cadence planning, and onboarding documentation"
+      ]
+    },
+    {
       title: "Front-End Engineer (Contract)",
       company: "LainaHealth (formerly IncludeHealth Inc)",
-      period: "Jan 2025 - Present",
+      period: "Jan 2025 - Sep 2025",
       description: "Developing responsive React-based telehealth app for physical therapy, improving patient workflows and clinician tools with modern React architecture.",
       achievements: [
         "Built reusable UI components with React hooks and TypeScript",
